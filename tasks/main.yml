@@ -1,0 +1,50 @@
+# Standards: 0.1
+---
+- name: Install client package
+  package:
+    name: redis-tools
+    state: present
+  tags:
+    - redis
+
+- name: Create server volume
+  when: redis_volume_server | default(False)
+  file:
+    path: '{{ redis_volume_server }}'
+    state: directory
+  tags:
+    - redis
+
+- name: Write env config
+  notify:
+    - Restart redis
+  template:
+    src: default.j2
+    dest: /etc/default/redis
+  tags:
+    - redis
+
+- name: Write service file
+  notify:
+    - Restart redis
+  template:
+    src: service.j2
+    dest: /etc/systemd/system/redis.service
+  tags:
+    - redis
+
+- name: Create docker network
+  docker_network:
+    name: '{{ redis_network }}'
+
+- name: Start service
+  systemd:
+    name: redis
+    state: started
+    daemon_reload: yes
+    masked: no
+    enabled: yes
+  tags:
+    - redis
+
+...

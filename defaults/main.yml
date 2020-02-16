@@ -1,0 +1,21 @@
+# Standards: 0.1
+---
+# @var redis_image:description: Docker image to use
+redis_image: webhippie/redis:latest
+
+# @var redis_network:description: Docker network to connect to
+redis_network: traefik
+
+# @var redis_volume_server:description: Path to server volume
+redis_volume_server: /var/lib/redis
+
+# @var redis_publish:description: Publish the service on that binding
+redis_publish_server: 127.0.0.1:6379
+
+# @var redis_databases:description: Number of databases to create
+redis_databases: 1
+
+# @var redis_maxconn:description: Max allowed connections
+redis_maxconn: 10000
+
+...
