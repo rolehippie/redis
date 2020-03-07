@@ -10,7 +10,7 @@
 - name: Create server volume
   when: redis_volume_server | default(False)
   file:
-    path: '{{ redis_volume_server }}'
+    path: "{{ redis_volume_server }}"
     state: directory
   tags:
     - redis
@@ -34,16 +34,17 @@
     - redis
 
 - name: Create docker network
+  when: redis_network | default(False)
   docker_network:
-    name: '{{ redis_network }}'
+    name: "{{ redis_network }}"
 
 - name: Start redis service
   systemd:
     name: redis
     state: started
-    daemon_reload: yes
-    masked: no
-    enabled: yes
+    daemon_reload: True
+    masked: False
+    enabled: True
   tags:
     - redis
 
