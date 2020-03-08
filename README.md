@@ -59,6 +59,12 @@ Docker network to connect to
 #### Default value
 
 ```YAML
+redis_network:
+```
+
+#### Example usage
+
+```YAML
 redis_network: traefik
 ```
 
