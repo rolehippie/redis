@@ -86,7 +86,7 @@ redis_volume_server: /var/lib/redis
 
 ## Dependencies
 
-None.
+- '[docker](https://github.com/rolehippie/docker)'
 
 ## License
 
@@ -94,4 +94,4 @@ Apache-2.0
 
 ## Author
 
-Thomas Boerger
+[Thomas Boerger](https://github.com/tboerger)
