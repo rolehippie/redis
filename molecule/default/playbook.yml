@@ -1,8 +1,6 @@
 ---
 - name: Converge
   hosts: all
-  vars:
-    redis_network: bridge
   roles:
     - role: docker
     - role: redis

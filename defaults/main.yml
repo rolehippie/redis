@@ -4,7 +4,8 @@
 redis_image: webhippie/redis:latest
 
 # @var redis_network:description: Docker network to connect to
-redis_network: traefik
+# @var redis_network:example: $ "traefik"
+redis_network:
 
 # @var redis_volume_server:description: Path to server volume
 redis_volume_server: /var/lib/redis
