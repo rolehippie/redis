@@ -92,7 +92,9 @@ redis_volume_server: /var/lib/redis
 
 ## Dependencies
 
-- '[docker](https://github.com/rolehippie/docker)'
+- '['
+- '  "[docker](https://github.com/rolehippie/docker)"'
+- ']'
 
 ## License
 
