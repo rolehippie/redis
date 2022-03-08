@@ -12,6 +12,9 @@
   file:
     path: "{{ redis_volume_server }}"
     state: directory
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
   tags:
     - redis
 
@@ -21,6 +24,9 @@
   template:
     src: default.j2
     dest: /etc/default/redis
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - redis
 
@@ -30,6 +36,9 @@
   template:
     src: service.j2
     dest: /etc/systemd/system/redis.service
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
   tags:
     - redis
 
