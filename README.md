@@ -1,28 +1,29 @@
 # redis
 
-[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/redis) [![Testing Build](https://github.com/rolehippie/redis/workflows/testing/badge.svg)](https://github.com/rolehippie/redis/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/redis/workflows/readme/badge.svg)](https://github.com/rolehippie/redis/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/redis/workflows/galaxy/badge.svg)](https://github.com/rolehippie/redis/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/redis)](https://github.com/rolehippie/redis/blob/master/LICENSE) 
+[![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/redis) [![Testing Build](https://github.com/rolehippie/redis/workflows/testing/badge.svg)](https://github.com/rolehippie/redis/actions?query=workflow%3Atesting) [![Readme Build](https://github.com/rolehippie/redis/workflows/readme/badge.svg)](https://github.com/rolehippie/redis/actions?query=workflow%3Areadme) [![Galaxy Build](https://github.com/rolehippie/redis/workflows/galaxy/badge.svg)](https://github.com/rolehippie/redis/actions?query=workflow%3Agalaxy) [![License: Apache-2.0](https://img.shields.io/github/license/rolehippie/redis)](https://github.com/rolehippie/redis/blob/master/LICENSE)
 
-Ansible role to install and configure redis key-value store. 
+Ansible role to install and configure redis key-value store.
 
-## Sponsor 
+## Sponsor
 
-[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu) 
+[![Proact Deutschland GmbH](https://proact.eu/wp-content/uploads/2020/03/proact-logo.png)](https://proact.eu)
 
 Building and improving this Ansible role have been sponsored by my employer **Proact Deutschland GmbH**.
 
 ## Table of content
 
-* [Default Variables](#default-variables)
-  * [redis_databases](#redis_databases)
-  * [redis_image](#redis_image)
-  * [redis_maxconn](#redis_maxconn)
-  * [redis_network](#redis_network)
-  * [redis_publish](#redis_publish)
-  * [redis_publish_server](#redis_publish_server)
-  * [redis_volume_server](#redis_volume_server)
-* [Dependencies](#dependencies)
-* [License](#license)
-* [Author](#author)
+- [Default Variables](#default-variables)
+  - [redis_databases](#redis_databases)
+  - [redis_image](#redis_image)
+  - [redis_maxconn](#redis_maxconn)
+  - [redis_network](#redis_network)
+  - [redis_publish](#redis_publish)
+  - [redis_publish_server](#redis_publish_server)
+  - [redis_volume_server](#redis_volume_server)
+- [Discovered Tags](#discovered-tags)
+- [Dependencies](#dependencies)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -96,9 +97,14 @@ Path to server volume
 redis_volume_server: /var/lib/redis
 ```
 
+## Discovered Tags
+
+**_redis_**
+
+
 ## Dependencies
 
-* [rolehippie.docker](https://github.com/rolehippie/docker)
+- [rolehippie.docker](https://github.com/rolehippie/docker)
 
 ## License
 
