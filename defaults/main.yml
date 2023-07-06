@@ -1,6 +1,7 @@
 # Standards: 1.2
 ---
 # @var redis_image:description: Docker image to use
+# renovate: datasource=docker depName=webhippie/redis
 redis_image: webhippie/redis:latest
 
 # @var redis_pull_image:description: Pull image as part of the tasks
