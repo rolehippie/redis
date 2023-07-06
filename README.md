@@ -23,6 +23,7 @@ Building and improving this Ansible role have been sponsored by my current and p
   - [redis_network](#redis_network)
   - [redis_publish](#redis_publish)
   - [redis_publish_server](#redis_publish_server)
+  - [redis_pull_image](#redis_pull_image)
   - [redis_volume_server](#redis_volume_server)
 - [Discovered Tags](#discovered-tags)
 - [Dependencies](#dependencies)
@@ -94,6 +95,16 @@ Publish the service on that binding
 
 ```YAML
 redis_publish_server: 127.0.0.1:6379
+```
+
+### redis_pull_image
+
+Pull image as part of the tasks
+
+#### Default value
+
+```YAML
+redis_pull_image: true
 ```
 
 ### redis_volume_server

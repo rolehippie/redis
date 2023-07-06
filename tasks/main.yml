@@ -42,10 +42,22 @@
   tags:
     - redis
 
+- name: Pull docker image
+  when:
+    - redis_pull_image
+  docker_image:
+    name: "{{ redis_image }}"
+    source: pull
+  tags:
+    - redis
+
 - name: Create docker network
-  when: redis_network | default(False)
+  when:
+    - redis_network | default(False)
   docker_network:
-    name: "{{ redis_network }}"
+    name: '{{ redis_network }}'
+  tags:
+    - redis
 
 - name: Start redis service
   systemd:

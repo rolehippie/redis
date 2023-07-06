@@ -3,6 +3,9 @@
 # @var redis_image:description: Docker image to use
 redis_image: webhippie/redis:latest
 
+# @var redis_pull_image:description: Pull image as part of the tasks
+redis_pull_image: True
+
 # @var redis_network:description: Docker network to connect to
 # @var redis_network:example: $ "traefik"
 redis_network:
