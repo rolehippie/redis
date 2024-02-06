@@ -1,6 +1,6 @@
 ---
 - name: Install client package
-  package:
+  ansible.builtin.package:
     name: redis-tools
     state: present
   tags:
@@ -8,7 +8,7 @@
 
 - name: Create server volume
   when: redis_volume_server | default(False)
-  file:
+  ansible.builtin.file:
     path: "{{ redis_volume_server }}"
     state: directory
     owner: root
@@ -20,7 +20,7 @@
 - name: Write env config
   notify:
     - Restart redis
-  template:
+  ansible.builtin.template:
     src: default.j2
     dest: /etc/default/redis
     owner: root
@@ -32,7 +32,7 @@
 - name: Write service file
   notify:
     - Restart redis
-  template:
+  ansible.builtin.template:
     src: service.j2
     dest: /etc/systemd/system/redis.service
     owner: root
@@ -44,7 +44,7 @@
 - name: Pull docker image
   when:
     - redis_pull_image
-  docker_image:
+  community.docker.docker_image:
     name: "{{ redis_image }}"
     source: pull
   tags:
@@ -53,13 +53,13 @@
 - name: Create docker network
   when:
     - redis_network | default(False)
-  docker_network:
+  community.docker.docker_network:
     name: '{{ redis_network }}'
   tags:
     - redis
 
 - name: Start redis service
-  systemd:
+  ansible.builtin.systemd:
     name: redis
     state: started
     daemon_reload: True
