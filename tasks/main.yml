@@ -11,8 +11,8 @@
   ansible.builtin.file:
     path: "{{ redis_volume_server }}"
     state: directory
-    owner: root
-    group: root
+    owner: "1000"
+    group: "1000"
     mode: u=rwx,g=rx,o=rx
   tags:
     - redis
