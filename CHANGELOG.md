@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.0](https://github.com/rolehippie/redis/compare/v1.1.0...v2.0.0) (2024-02-12)
+
+
+### Features
+
+* drop support for ubuntu 18.04 ([5fcb4c3](https://github.com/rolehippie/redis/commit/5fcb4c349b2eec3966e730c3bbec3f061ad25651))
+* used full qualified collection names ([e0ebadc](https://github.com/rolehippie/redis/commit/e0ebadc03384e1f2da68f0932ab82c36cecd0b1e))
+
+
+### Bugfixes
+
+* remove meta requirements and document used collections ([379bbe8](https://github.com/rolehippie/redis/commit/379bbe8d4905461aecebadf73d7d76ecf02e2a7a))
+* volume got to be owned by uid 1000 ([0f94269](https://github.com/rolehippie/redis/commit/0f94269c3b00819affb4d855cf38c7b8f40b61e5))
+
 ## [1.1.0](https://github.com/rolehippie/redis/compare/v1.0.0...v1.1.0) (2023-07-10)
 
 
