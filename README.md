@@ -1,4 +1,4 @@
-# redis
+# workspace
 
 [![Source Code](https://img.shields.io/badge/github-source%20code-blue?logo=github&logoColor=white)](https://github.com/rolehippie/redis)
 [![General Workflow](https://github.com/rolehippie/redis/actions/workflows/general.yml/badge.svg)](https://github.com/rolehippie/redis/actions/workflows/general.yml)
@@ -119,7 +119,6 @@ redis_volume_server: /var/lib/redis
 ## Discovered Tags
 
 **_redis_**
-
 
 ## Dependencies
 
