@@ -7,7 +7,7 @@
     - redis
 
 - name: Create server volume
-  when: redis_volume_server | default(False)
+  when: redis_volume_server | default(false)
   ansible.builtin.file:
     path: "{{ redis_volume_server }}"
     state: directory
@@ -52,7 +52,7 @@
 
 - name: Create docker network
   when:
-    - redis_network | default(False)
+    - false if redis_network is none else (redis_network | length > 0)| default(false)
   community.docker.docker_network:
     name: '{{ redis_network }}'
   tags:
@@ -62,9 +62,9 @@
   ansible.builtin.systemd:
     name: redis
     state: started
-    daemon_reload: True
-    masked: False
-    enabled: True
+    daemon_reload: true
+    masked: false
+    enabled: true
   tags:
     - redis
 

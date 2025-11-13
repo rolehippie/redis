@@ -17,14 +17,14 @@ ExecStart=/usr/bin/docker run --rm \
   --hostname %p \
   --label traefik.enable=false \
   --env-file /etc/default/redis \
-{% if redis_network | default(False) %}
+{% if redis_network | default(false) %}
   --network {{ redis_network }} \
 {% endif %}
   --volume /etc/ssl:/etc/ssl:ro \
-{% if redis_volume_server | default(False) %}
+{% if redis_volume_server | default(false) %}
   --volume {{ redis_volume_server }}:/var/lib/redis \
 {% endif %}
-{% if redis_publish_server | default(False) %}
+{% if redis_publish_server | default(false) %}
   --publish {{ redis_publish_server }}:6379 \
 {% endif %}
   --health-cmd /usr/bin/healthcheck \
