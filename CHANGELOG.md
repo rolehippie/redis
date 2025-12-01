@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0](https://github.com/rolehippie/redis/compare/v2.0.0...v3.0.0) (2025-12-01)
+
+
+### Features
+
+* apply new repo structure and update linting ([277f985](https://github.com/rolehippie/redis/commit/277f985033f82331b4968d1abc6b84fca318e087))
+* **major:** update dependency community.docker to v5 ([b6afb0a](https://github.com/rolehippie/redis/commit/b6afb0afb45b472dac4e3fb8f08d7927dcea82c0))
+
 ## [2.0.0](https://github.com/rolehippie/redis/compare/v1.1.0...v2.0.0) (2024-02-12)
 
 
