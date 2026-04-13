@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.2.0](https://github.com/rolehippie/redis/compare/v3.1.0...v3.2.0) (2026-04-13)
+
+### Dependencies
+
+* **minor:** update dependency community.docker to >=5.2.0,<5.3.0 ([b53986d](https://github.com/rolehippie/redis/commit/b53986de377da028c7e1a5283d89d3ee5f060410))
+
+### Miscellaneous
+
+* **flake:** updated lockfile [skip ci] ([4d74fbe](https://github.com/rolehippie/redis/commit/4d74fbeff10c9bbe3f562349eddc9bfbacd66733))
+
 ## [3.1.0](https://github.com/rolehippie/redis/compare/v3.0.0...v3.1.0) (2026-04-06)
 
 ### Dependencies
