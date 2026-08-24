@@ -4,6 +4,8 @@
   vars:
     docker_daemon_config:
       storage-driver: vfs
+    redis_default_publish:
+      - 127.0.0.1:6379:6379
   roles:
     - role: rolehippie.docker
     - role: rolehippie.redis

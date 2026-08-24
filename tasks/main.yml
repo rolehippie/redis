@@ -6,18 +6,41 @@
   tags:
     - redis
 
-- name: Create server volume
-  when: redis_volume_server | default(false)
+- name: Create defined group
+  register: redis_group_result
+  ansible.builtin.group:
+    name: "{{ redis_group }}"
+    system: true
+    state: present
+  tags:
+    - redis
+
+- name: Create defined user
+  register: redis_user_result
+  ansible.builtin.user:
+    name: "{{ redis_user }}"
+    group: "{{ redis_group }}"
+    comment: redis
+    password: "!"
+    shell: /usr/sbin/nologin
+    home: "{{ redis_volume_server }}"
+    createhome: false
+    system: true
+    state: present
+  tags:
+    - redis
+
+- name: Create data dir
   ansible.builtin.file:
     path: "{{ redis_volume_server }}"
     state: directory
-    owner: "1000"
-    group: "1000"
+    owner: "{{ redis_user_result.uid }}"
+    group: "{{ redis_group_result.gid }}"
     mode: u=rwx,g=rx,o=rx
   tags:
     - redis
 
-- name: Write env config
+- name: Write default config
   notify:
     - Restart redis
   ansible.builtin.template:
@@ -52,9 +75,10 @@
 
 - name: Create docker network
   when:
-    - false if redis_network is none else (redis_network | length > 0)| default(false)
+    - redis_network is not none
+    - redis_network | length > 0
   community.docker.docker_network:
-    name: '{{ redis_network }}'
+    name: "{{ redis_network }}"
   tags:
     - redis
 

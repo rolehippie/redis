@@ -6,20 +6,75 @@ redis_image: webhippie/redis:latest
 # @var redis_pull_image:description: Pull image as part of the tasks
 redis_pull_image: true
 
-# @var redis_network:description: Docker network to connect to
-# @var redis_network:example: $ "traefik"
+# @var redis_network:description: Optional docker network to attach
 redis_network:
+
+# @var redis_default_publish:description: List of default port publishing for docker
+# @var redis_default_publish:example: >
+# redis_default_publish:
+#   - 127.0.0.1:6379:6379
+# @end
+redis_default_publish: []
+
+# @var redis_extra_publish:description: List of extra port publishing for docker
+# @var redis_extra_publish:example: >
+# redis_extra_publish:
+#   - 127.0.0.1:6379:6379
+# @end
+redis_extra_publish: []
+
+# @var redis_default_labels:description: List of default labels to assign to docker
+redis_default_labels: []
+
+# @var redis_extra_labels:description: List of extra labels to assign to docker
+redis_extra_labels: []
+
+# @var redis_default_volumes:description: List of default volumes to mount for docker
+redis_default_volumes:
+  - "{{ redis_volume_server }}:/var/lib/redis"
+
+# @var redis_extra_volumes:description: List of extra volumes to mount for docker
+# @var redis_extra_volumes:example: >
+# redis_extra_volumes:
+#   - /path/to/host/folder1:/path/within/container1
+#   - /path/to/host/folder2:/path/within/container2
+#   - /path/to/host/folder3:/path/within/container3
+# @end
+redis_extra_volumes: []
+
+# @var redis_memory_limit:description: Memory limit with Docker deployment
+# @var redis_memory_limit:example: $ "1024m"
+redis_memory_limit:
+
+# @var redis_memory_swap:description: Swap usage with Docker deployment
+# @var redis_memory_swap:example: $ "2048m"
+redis_memory_swap:
+
+# @var redis_memory_soft_limit:description: Soft memory limit with Docker deployment
+# @var redis_memory_soft_limit:example: $ "512m"
+redis_memory_soft_limit:
+
+# @var redis_cpu_shares:description: CPU shares with Docker deployment
+# @var redis_cpu_shares:example: $ "512"
+redis_cpu_shares:
+
+# @var redis_number_of_cpus:description: Number of CPUs with Docker deployment
+# @var redis_number_of_cpus:example: $ "1.0"
+redis_number_of_cpus:
 
 # @var redis_volume_server:description: Path to server volume
 redis_volume_server: /var/lib/redis
-
-# @var redis_publish:description: Publish the service on that binding
-redis_publish_server: 127.0.0.1:6379
 
 # @var redis_databases:description: Number of databases to create
 redis_databases: 1
 
 # @var redis_maxconn:description: Max allowed connections
 redis_maxconn: 10000
+
+# @var redis_group:description: System group for the Redis service
+redis_group: redis
+
+# @var redis_user:description: System user for the Redis service
+redis_user: redis
 
 ...

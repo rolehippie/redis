@@ -15,18 +15,35 @@ ExecStartPre=/bin/sh -c '/usr/bin/docker ps -a | /bin/grep %p 1> /dev/null && /u
 ExecStart=/usr/bin/docker run --rm \
   --name %p \
   --hostname %p \
-  --label traefik.enable=false \
   --env-file /etc/default/redis \
+{% if redis_memory_limit | default(false) %}
+  --memory {{ redis_memory_limit }} \
+{% endif %}
+{% if redis_memory_swap | default(false) %}
+  --memory-swap {{ redis_memory_swap }} \
+{% endif %}
+{% if redis_memory_soft_limit | default(false) %}
+  --memory-reservation {{ redis_memory_soft_limit }} \
+{% endif %}
+{% if redis_cpu_shares | default(false) %}
+  --cpu-shares {{ redis_cpu_shares }} \
+{% endif %}
+{% if redis_number_of_cpus | default(false) %}
+  --cpus {{ redis_number_of_cpus }} \
+{% endif %}
+{% for item in redis_default_labels + redis_extra_labels %}
+  --label {{ item }} \
+{% endfor %}
 {% if redis_network | default(false) %}
   --network {{ redis_network }} \
 {% endif %}
   --volume /etc/ssl:/etc/ssl:ro \
-{% if redis_volume_server | default(false) %}
-  --volume {{ redis_volume_server }}:/var/lib/redis \
-{% endif %}
-{% if redis_publish_server | default(false) %}
-  --publish {{ redis_publish_server }}:6379 \
-{% endif %}
+{% for item in redis_default_volumes + redis_extra_volumes %}
+  --volume {{ item }} \
+{% endfor %}
+{% for item in redis_default_publish + redis_extra_publish %}
+  --publish {{ item }} \
+{% endfor %}
   --health-cmd /usr/bin/healthcheck \
   --health-interval 10s \
   --health-retries 20 \
