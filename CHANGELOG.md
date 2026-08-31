@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.0.0](https://github.com/rolehippie/redis/compare/v3.3.0...v4.0.0) (2026-08-31)
+
+### ⚠ BREAKING CHANGES
+
+* more generic label and volume definitions
+
+### Features
+
+* more generic label and volume definitions ([fef5f81](https://github.com/rolehippie/redis/commit/fef5f81f057cec478b3380314a98d35b6f18c451))
+
+### Dependencies
+
+* **minor:** update dependency pipx:ansible-doctor to v8.4.0 ([9536177](https://github.com/rolehippie/redis/commit/95361775c27825b1902b44d3813102ebdf490fd9))
+* **minor:** update dependency pipx:ansible-lint to v26.8.0 ([#50](https://github.com/rolehippie/redis/issues/50)) ([a587b92](https://github.com/rolehippie/redis/commit/a587b9201f5170632fb436cb6669221e0eb48ec0))
+* **minor:** update dependency pipx:molecule to v26.8.0 ([aa59f25](https://github.com/rolehippie/redis/commit/aa59f2578cce43ba1a541bfe8ee32a1556a7b93c))
+* **patch:** update dependency pipx:ansible-core to v2.21.3 ([#48](https://github.com/rolehippie/redis/issues/48)) ([9ea7ede](https://github.com/rolehippie/redis/commit/9ea7ede1b30aa0b367c4fd813e17086db24f9b7c))
+* **patch:** update dependency pipx:ansible-doctor to v8.4.1 ([#52](https://github.com/rolehippie/redis/issues/52)) ([c84cc97](https://github.com/rolehippie/redis/commit/c84cc977378546ae72358b4aeb231379133dd0f9))
+* **patch:** update dependency pre-commit to v4.6.2 ([2021049](https://github.com/rolehippie/redis/commit/2021049d1beab897f84826997e1c1c24fc3f14f6))
+* **patch:** update dependency python to v3.14.7 ([91b9257](https://github.com/rolehippie/redis/commit/91b9257b35f772cc5feedf1d68baa87de92b1662))
+
 ## [3.3.0](https://github.com/rolehippie/redis/compare/v3.2.0...v3.3.0) (2026-07-27)
 
 ## [3.2.0](https://github.com/rolehippie/redis/compare/v3.1.0...v3.2.0) (2026-04-13)
