@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.0](https://github.com/rolehippie/redis/compare/v4.0.0...v4.1.0) (2026-09-07)
+
+### Dependencies
+
+* **minor:** update dependency community.docker to >=5.3.0,<5.4.0 ([#53](https://github.com/rolehippie/redis/issues/53)) ([61cc02f](https://github.com/rolehippie/redis/commit/61cc02f95ae50b6cb62472c3f5762f0687e9c952))
+
 ## [4.0.0](https://github.com/rolehippie/redis/compare/v3.3.0...v4.0.0) (2026-08-31)
 
 ### ⚠ BREAKING CHANGES
